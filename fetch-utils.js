@@ -37,6 +37,17 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
-// function checkError({ data, error }) {
-//     return error ? console.error(error) : data;
-// }
+export async function fetchItems() {
+    const resp = await client.from('shopping_list').select().order('completed');
+    return checkError(resp);
+}
+
+export async function createItems(name, quantity) {
+    const resp = await client.from('shopping_list').insert({ name: name, quantity: quantity });
+    console.log(resp);
+    return checkError(resp);
+}
+
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}

@@ -74,7 +74,14 @@ form {
     width: 2em;
     height: 2em;
     border: black solid 1px;
-    background-image: url(); 
+    background-image: url(https://img.icons8.com/metro/2x/check-all.png); 
+    background-size: cover;
+}
+
+.incomplete {
+    width: 2em;
+    height: 2em;
+    border: black solid 1px;
     background-size: cover;
 }
 /* background img link for completed https://img.icons8.com/metro/2x/check-all.png */
