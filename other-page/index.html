@@ -9,19 +9,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/home.css">
+    <!-- <link rel="stylesheet" href="../styles/home.css"> -->
+    <link rel="stylesheet" href="shoppinglist.css">
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="../assets/big-logo.png" />
-        </div>
+        <button id="logout">Log Out</button>
     </header>    
-    <button id="logout">Logout</button>
     <main>
-        <h1>You are logged in!</h1>
+        <section id="left-container">
+            <div id="form-div">
+                <form id="form">
+                    <label for="name">Item Name:
+                        <input type="text" name="name" id="name-input">
+                    </label>
+                    <label for="quantity">Quantity: 
+                        <input type="text" name="quantity" id="quantity-input">
+                    </label>
+                </form>
+            </div>
+            <div id="count-div">
+                <p>Item Count: <span id="count">X</span></p>
+            </div>
+        </section>
+        <section id="right-container">
+            <div id="items-container">
+                
+            </div>
+        </section>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
