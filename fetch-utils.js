@@ -39,11 +39,18 @@ export async function logout() {
 
 export async function fetchItems() {
     const resp = await client.from('shopping_list').select().order('completed');
+    console.log(resp);
     return checkError(resp);
 }
 
 export async function createItems(name, quantity) {
     const resp = await client.from('shopping_list').insert({ name: name, quantity: quantity });
+    console.log(resp);
+    return checkError(resp);
+}
+
+export async function updateItems(id) {
+    const resp = await client.from('shopping_list').update({ completed: true }).match({ id });
     console.log(resp);
     return checkError(resp);
 }

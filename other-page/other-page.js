@@ -1,4 +1,4 @@
-import { checkAuth, createItems, fetchItems, getUser, logout } from '../fetch-utils.js';
+import { checkAuth, createItems, fetchItems, logout } from '../fetch-utils.js';
 import { renderListItem } from '../render-utils.js';
 
 // auth/fetch utils stuff
@@ -8,13 +8,14 @@ logoutButton.addEventListener('click', () => {
     logout();
 });
 
-async function renderItems() {
+export async function renderItems() {
     const items = await fetchItems();
     const shopList = document.getElementById('items-container');
     shopList.textContent = '';
 
     items.forEach(element => {
-        shopList.append(renderListItem(element)); 
+        shopList.append(renderListItem(element));
+
     });
 }
 window.addEventListener('load', async () => {

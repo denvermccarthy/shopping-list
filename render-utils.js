@@ -1,5 +1,8 @@
 // div I want to generate with render function
 
+import { updateItems } from "./fetch-utils.js";
+import { renderItems } from './other-page/other-page.js';
+
 {/* <div class="incompleted item">
         <div class="button-container">
             <div class="delete"></div>
@@ -39,8 +42,10 @@ export function renderListItem(object) {
         parentDiv.classList.add('incompleted');
     }
 
-    completeDiv.addEventListener('click', () => {
-        console.log('clicked!!!');
+    completeDiv.addEventListener('click', async () => {
+        // console.log(object.id);
+        await updateItems(object.id);
+        await renderItems();
     });
 
     parentDiv.append(buttonsDiv, infoDiv);
