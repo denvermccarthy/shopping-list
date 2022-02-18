@@ -1,4 +1,4 @@
-import { checkAuth, createItems, fetchItems, logout } from '../fetch-utils.js';
+import { checkAuth, createItems, deleteAllItems, fetchItems, getQuantities, logout } from '../fetch-utils.js';
 import { renderListItem } from '../render-utils.js';
 
 // auth/fetch utils stuff
@@ -20,6 +20,7 @@ export async function renderItems() {
 }
 window.addEventListener('load', async () => {
     await renderItems();
+    await getQuantities();
 });
 
 
@@ -31,8 +32,16 @@ form.addEventListener('submit', async (e) => {
     // console.log(data.get('quantity'), data.get('name'));
     
     await createItems(data.get('name'), data.get('quantity'));
+
     renderItems();
     form.reset();
 });
 
 // render db items to list 
+const deleteEL = document.getElementById('delete');
+
+deleteEL.addEventListener('click', async () => {
+    await deleteAllItems();
+    console.log('click');
+    renderItems();
+});

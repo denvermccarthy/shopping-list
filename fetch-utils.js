@@ -51,10 +51,24 @@ export async function createItems(name, quantity) {
 
 export async function updateItems(id) {
     const resp = await client.from('shopping_list').update({ completed: true }).match({ id });
-    console.log(resp);
     return checkError(resp);
 }
 
+export async function deleteItems(id) {
+    const resp = await client.from('shopping_list').delete().match({ id });
+    return checkError(resp);
+}
+
+export async function deleteAllItems() {
+    const resp = await client.from('shopping_list').delete().match({ 'user_id': getUser().id });
+    return checkError(resp);
+}
+
+export async function getQuantities() {
+    const resp = await client.from('shopping_list').select('quantity');
+    console.log(resp, 'quantities');
+    return checkError(resp);
+}
 function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
