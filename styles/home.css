@@ -1,1 +1,126 @@
-/* add home page styles here */
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+    width: 35vw;
+}
+
+#right-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 60vw;
+    height: 80vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-div {
+    display: flex;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+#count-div {
+    height: 20%;
+}
+
+#items-container {
+    width: 100%;
+}
+
+.item {
+   display: flex;
+   flex-direction: row;
+   height: auto;
+   width: 80%;
+   margin: 1vw auto; 
+}
+
+.button-container {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.button-container>* {
+    margin: 0.5em auto;
+    background-color: white;
+}
+
+.delete {
+    width: 2em;
+    height: 2em;
+    border: black solid 1px;
+    background-image: url(https://img.icons8.com/ios/344/trash--v1.png);
+    background-size: cover;
+}
+
+.complete {
+    width: 2em;
+    height: 2em;
+    border: black solid 1px;
+    background-image: url(https://img.icons8.com/metro/2x/check-all.png); 
+    background-size: cover;
+}
+
+.incomplete {
+    width: 2em;
+    height: 2em;
+    border: black solid 1px;
+    background-size: cover;
+}
+/* background img link for completed https://img.icons8.com/metro/2x/check-all.png */
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    margin: 0;
+}
+
+.info-container>* {
+    margin: 0;
+}
+
+.completed {
+    background-color: green;
+    color: white;
+}
+
+.incompleted {
+    background-color: red;
+    color: white;
+}
+/* ASK HOW TO FIX OVERFLOW, FORMS AND MINMAX HEIGHT FOR FORM */
+@media screen and (max-width: 600px) {
+    main {
+        display: block;
+        overflow: scroll;
+        margin-bottom: 1vh;
+
+    }
+    #left-container, #right-container {
+        margin: 0 auto;
+        justify-content: center;
+    }
+    #left-container {
+        height: 20%;
+    }
+
+
+}
