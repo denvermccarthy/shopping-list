@@ -15,7 +15,6 @@ export async function renderItems() {
 
     items.forEach(element => {
         shopList.append(renderListItem(element));
-
     });
 }
 window.addEventListener('load', async () => {
